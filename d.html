@@ -1,0 +1,52 @@
+Docker.
+docker --version (verzija)
+docker ps 
+First we have image, and after that we create container, and run container from it.
+
+image-nginx(alpine) and image nginx have tags
+
+docker pull nginx (downloading nginx)
+docker pull node (downloading node)
+
+latest (is actualy tag)
+
+docker images (command for list images)
+docker run -d nginx:latest 
+-d (run in touch mode)
+-p (port)
+docker ps (list container)
+-p 8080:80
+docker stop (stop container)
+docker run -d -p 3000:80 -p 8080:80 nginx:latest 
+(docker is multiple ports)
+we have stop or start container docker stop or start -id or name container 
+docker ps -a (list all container)
+docker rm (name or id) 
+docker rm -f (name or id) 
+docker rm -f $(docker ps -aq) 
+docker run --name(enter name) -d -p 3000:80 -p 8080:80 nginx:latest 
+docker run --name -v $(pwd):/usr/share/nginx/html:ro -d -p 8080:80 nginx:latest (we conect code and container) 
+docker exec -it bash (interactive mode) -> ls -al(we see linux stucture in container) 
+docker exec -it ID /bin/bash
+we create dockerfile ->
+FROM nginx:latest | node:latest
+ADD . path 
+
+docker build --tag website:latest . ->on this way we built our image and on docker image ls command 
+WORKDIR /app (create directoru) 
+RUN npm install (install all dependecie) 
+CMD node index.js (command for running app) 
+.dockerignore 
+docker pull node:alpine 
+docker pull nginx:alpine 
+docker tag name1:latest name2:newtag (we can create new tag on this way) 
+docker push namesite:tagname 
+docker inspect id or name (bunch information about container) 
+docker logs(very imortant)
+----
+docker logs ID or name 
+
+hi displays port which work
+we have a lot logs, bunch logs
+we getting some requests 
+
