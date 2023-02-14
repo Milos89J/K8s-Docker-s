@@ -31,4 +31,15 @@ When app damage, we can replicate, but DB can't be replicated via Deployment.
 We can't replicated DB because don't has access same data storage 
 With StatefulSet we have replace broken DB, but not easy
 
+Each Configuration File has 3 parts 
+metadata 
+specification 
+status - Automatically generated and added by Kubernetes 
+Where does K8s get this status data ( Cluster brain is ETCD-holds the current status of any k8s components ) 
+-----
+Minikube and Kubectl 
+
+Minikube - for test, test on local masine, if you don't have enough memory or CPU we use open soure 
+         tools Minikube 
+Kubectl - is command line tool for Kubernetes cluster
 
