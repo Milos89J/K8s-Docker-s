@@ -15,5 +15,20 @@ API server which also container.
 first, we have Node, server.
 we have container, like Docker container, a we create Pod in Kubernetes, and every container have 
 single Pod. Pod is layer which contains Docker Container. 
-communication between Pods, means each Pods have IP address
+communication between Pods, means each Pods have IP address. Pods then can die very easily. 
+They have service and ip address, and even if Pod die, stay service and ip address. 
+we don't have change that. 
+We have external service and we internal service.
+instead of service we have ingress, because we have hide ip address. 
+in kubernetes we have ConfigFile and Secret, Configfile conecting to the Pod, 
+an secret have secret data. 
+if he happens in prodaction that Application file die, or damage, we replicate everything in another Node 
+The node replica is connected to same Service. 
+Serves also catch request and list busy Pod. 
+We create Deployments, and few replicas. 
+Blueprint
+When app damage, we can replicate, but DB can't be replicated via Deployment.
+We can't replicated DB because don't has access same data storage 
+With StatefulSet we have replace broken DB, but not easy
+
 
